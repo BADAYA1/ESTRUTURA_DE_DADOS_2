@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
+bool troca;
 
 typedef struct Celula{
     int valor;
@@ -22,10 +24,21 @@ Lista *inicializa(){
 void imprimir(Lista *lista){
     printf("\n[");
     Celula *atual = lista->primeira;
-    while(atual != NULL){
-        printf("%d (●´∀｀●)\n", atual->valor);
-        atual = atual->proximo;//༼ つ ◕_◕ ༽つ
+    if(troca){
+        while(atual != NULL){
+            printf("%d (●´∀｀●)\n", atual->valor);
+            atual = atual->proximo;
+            troca = false;
+        }
+    }else{
+        while(atual != NULL){
+            printf("%d ༼ つ ◕_◕ ༽つ\n", atual->valor);
+            atual = atual->proximo;
+            troca = true;
+        }
     }
+   
+
     printf("] -> quantidade: %d\n", lista->quantidade);
 }
 
@@ -53,6 +66,8 @@ void inserir(Lista *lista, int valor){
 }
 
 int main(){
+    
+    bool troca = true;
     Lista *lista = inicializa();
     printf("Lista dinamica encadeada");
     inserir(lista, 3);

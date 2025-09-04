@@ -24,19 +24,16 @@ Lista *inicializa(){
 void imprimir(Lista *lista){
     printf("\n[");
     Celula *atual = lista->primeira;
-    if(troca){
-        while(atual != NULL){
-            printf("%d (●´∀｀●)\n", atual->valor);
-            atual = atual->proximo;
-            troca = false;
-        }
-    }else{
-        while(atual != NULL){
-            printf("%d ༼ つ ◕_◕ ༽つ\n", atual->valor);
-            atual = atual->proximo;
-            troca = true;
-        }
+    while(atual != NULL){
+        printf("%d (●´∀｀●)\n", atual->valor);
+        atual = atual->proximo;
+        printf("%d (づ｡◕‿‿◕｡)づ\n", atual->valor);
+        atual = atual->proximo;
+        printf("%d ༼ つ ◕_◕ ༽つ\n", atual->valor);
+        atual = atual->proximo;
+        troca = true;
     }
+    
    
 
     printf("] -> quantidade: %d\n", lista->quantidade);
@@ -75,7 +72,7 @@ int main(){
     inserir(lista, 9);
     inserir(lista, 67);
     inserir(lista, 200);
-    inserir(lista, 650);
+    inserir(lista, 600);
     imprimir(lista);
 
     

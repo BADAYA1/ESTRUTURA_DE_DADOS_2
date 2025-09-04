@@ -43,7 +43,7 @@ void inserir(LDDE *lista, int dado){
         atual->anterior = nova;
     }
     
-    Celula *ultimo = nova->valor;
+    Celula *ultimo = atual;
 
     lista->qtde++;
 }
@@ -76,13 +76,14 @@ int main(){
     LDDE *lista = malloc(sizeof(LDDE));
     lista->qtde = 0;
     lista->primeiro = NULL;
+    lista->ultimo = NULL;
     printf("Lista duplamente encadeada\n");
     inserir(lista, 1);
     inserir(lista, 2);
     inserir(lista, 3);
     inserir(lista, 5);
     inserir(lista, 7);
-    imprimir(lista);
+    //imprimir(lista);
     imprimirInverso(lista);
     return 0;
 }

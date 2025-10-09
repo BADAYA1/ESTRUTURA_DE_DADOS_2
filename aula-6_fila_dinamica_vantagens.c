@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct Celula{
@@ -37,4 +37,4 @@ int main(){
 
     imprimir(fila);
     return 0;    
-}
+}*/
